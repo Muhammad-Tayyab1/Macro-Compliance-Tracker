@@ -2,7 +2,7 @@ import { MongoClient } from 'mongodb';
 import nextConnect from 'next-connect';
 import dotenv from 'dotenv';
 dotenv.config();
-const client = new MongoClient('mongodb://ShoesDb:12345@cluster0-shard-00-00.le9zi.mongodb.net:27017,cluster0-shard-00-01.le9zi.mongodb.net:27017,cluster0-shard-00-02.le9zi.mongodb.net:27017/test?ssl=true&replicaSet=atlas-7owskh-shard-0&authSource=admin&retryWrites=true&w=majority', {
+const client = new MongoClient(process.env.VERCEL_ENV, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
